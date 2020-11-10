@@ -12,9 +12,11 @@ int main() {
     int grade;
 
 
-    cout << "enter name: ";
+   
+for(int z=0;z<5;z=z+1){
+ cout << "enter name: ";
     string name;
-    getline(cin, name);
+    cin >> name;
 
 
     cout << "enter the grade:";
@@ -37,9 +39,12 @@ int main() {
         cout << "Control Department" << endl;
     else if (y == 'T')
         cout << "Communication Department" << endl;
+    else if (y=='c')
+        cout << "computer Department" << endl;
     else
         cout << "Error";
 
 
+}
     return 0;
 }
