@@ -4,6 +4,7 @@ Department:Computer Engineering
 */
 #include <iostream>
 #include<string>
+#include <fstream>
 
 using namespace std;
 
@@ -59,11 +60,11 @@ int main() {
         departments[studentI] = department;
         grades[studentI] = grade;
     }
-
+    ofstream file("out.txt");
     for (int i = 0; i < total; ++i) {
-        cout << "name: " << names[i] << endl;
-        cout << "grade: " << grades[i] << endl;
-        cout << "department: " << departments[i] << endl;
+        file << "name: " << names[i] << endl;
+        file << "grade: " << grades[i] << endl;
+        file << "department: " << departments[i] << endl;
     }
 
     return 0;
