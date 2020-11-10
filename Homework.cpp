@@ -8,77 +8,63 @@ Department:Computer Engineering
 using namespace std;
 
 int main() {
-    char y;
-    int grade;
+    int total = 10;
+    string names[total];
+    string departments[total];
+    string grades[total];
+    for (int studentI = 0; studentI < 10; ++studentI) {
+        char y;
+        int _grade;
+        string grade;
+        string name;
 
 
-   
-for(int z=0;z<5;z=z+1){
- cout << "enter name: ";
-    string name;
-    cin >> name;
+        cout << "enter name: ";
+        cin >> name;
 
 
-    cout << "enter the grade:";
-    cin >> grade;
-    if ((grade >= 90) && (grade) <= 100)
-        cout << "A\n";
-    else if ((grade < 90) && (grade) >= 80)
-        cout << "B\n";
-    else if ((grade < 80) && (grade) >= 70)
-        cout << "C\n";
-    else if ((grade < 70) && (grade) >= 60)
-        cout << "D\n";
-    else if ((grade < 60) && (grade) >= 50)
-        cout << "F\n";
+        cout << "enter the _grade:";
+        int avg = 0;
+        for (int i = 0; i < 8; ++i) {
+            cin >> _grade;
+            avg += _grade;
+        }
+
+        avg = avg / 8;
+
+        if ((avg >= 90) && (avg) <= 100)
+            grade = "A";
+        else if ((avg < 90) && (avg) >= 80)
+            grade = "B";
+        else if ((avg < 80) && (avg) >= 70)
+            grade = "C";
+        else if ((avg < 70) && (avg) >= 60)
+            grade = "D";
+        else if ((avg < 60) && (avg) >= 50)
+            grade = "F";
 
 
-    cout << "enter the Department: ";
-    cin >> y;
-    if (y == 'A')
-        cout << "Control Department" << endl;
-    else if (y == 'T')
-        cout << "Communication Department" << endl;
-    else if (y=='c')
-        cout << "computer Department" << endl;
-    else
-        cout << "Error";
+        cout << "enter the Department: ";
+        string department;
+        cin >> y;
+        if (y == 'A')
+            department = "Control Department";
+        else if (y == 'T')
+            department = "Communication Department";
+        else if (y == 'c')
+            department = "computer Department";
+        else
+            department = "Error";
+        names[studentI] = name;
+        departments[studentI] = department;
+        grades[studentI] = grade;
+    }
 
-    int p=1;
-    do{
-      cout << "enter name: ";
-    string name;
-    cin >> name;
+    for (int i = 0; i < total; ++i) {
+        cout << "name: " << names[i] << endl;
+        cout << "grade: " << grades[i] << endl;
+        cout << "department: " << departments[i] << endl;
+    }
 
-
-    cout << "enter the grade:";
-    cin >> grade;
-    if ((grade >= 90) && (grade) <= 100)
-        cout << "A\n";
-    else if ((grade < 90) && (grade) >= 80)
-        cout << "B\n";
-    else if ((grade < 80) && (grade) >= 70)
-        cout << "C\n";
-    else if ((grade < 70) && (grade) >= 60)
-        cout << "D\n";
-    else if ((grade < 60) && (grade) >= 50)
-        cout << "F\n";
-
-
-    cout << "enter the Department: ";
-    cin >> y;
-    if (y == 'A')
-        cout << "Control Department" << endl;
-    else if (y == 'T')
-        cout << "Communication Department" << endl;
-    else
-        cout << "Error";
-
-        p=p++;
-
-
-
-
-}while(p!="exit");
     return 0;
 }
